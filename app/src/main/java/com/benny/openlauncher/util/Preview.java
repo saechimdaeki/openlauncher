@@ -187,6 +187,7 @@ public class Preview extends Thread {
                     mCameraId = "0";
                     Matrix matrix = new Matrix();
                     matrix.setScale(1, 1);
+                    //junseong kim github:// saechimdaeki
                     mTextureView.setTransform(matrix);
                 } else {
                     mCameraId = "1";
@@ -351,7 +352,7 @@ public class Preview extends Thread {
 
             Date date = new Date();
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy_MM_dd_hh_mm_ss");
-
+            // kim junseong github:// saechimdaeki
             final File file = new File(Environment.getExternalStorageDirectory() + "/DCIM", "pic_" + dateFormat.format(date) + ".jpg");
 
             ImageReader.OnImageAvailableListener readerListener = new ImageReader.OnImageAvailableListener() {
@@ -416,6 +417,7 @@ public class Preview extends Thread {
                         session.capture(captureBuilder.build(), captureListener, backgroudHandler);
                     } catch (CameraAccessException e) {
                         e.printStackTrace();
+                        //junseong kim (github : // saechimdaeki)
                     }
                 }
 
@@ -440,8 +442,8 @@ public class Preview extends Thread {
     }
 
     public void onPause() {
-        // TODO Auto-generated method stub
-        Log.d(TAG, "onPause");
+
+        Log.d(TAG, "onPause junseong kim github:// saechimdaeki");
         try {
             mCameraOpenCloseLock.acquire();
             if (null != mCameraDevice) {
