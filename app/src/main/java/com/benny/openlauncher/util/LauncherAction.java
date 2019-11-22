@@ -49,7 +49,7 @@ public class LauncherAction {
             Action.EditMinibar, Action.SetWallpaper,
             Action.LockScreen, Action.LauncherSettings,
             Action.VolumeDialog, Action.DeviceSettings,
-            Action.Camera
+            Action.Camera,Action.FOODIE
     );
 
     public static void RunAction(Action action, final Context context) {
@@ -135,7 +135,7 @@ public class LauncherAction {
                 }
                 break;
             case Camera:
-                context.startActivity(new Intent(context,CameraActivity.class));
+                context.startActivity(new Intent(MediaStore.INTENT_ACTION_STILL_IMAGE_CAMERA));
                 break;
             case FOODIE:
                 context.startActivity(new Intent(context,CameraActivity.class));
