@@ -26,8 +26,9 @@ import java.util.List;
 
 public class LauncherAction {
 
-    public enum Action {
+    public enum Action { 
         EditMinibar, SetWallpaper, LockScreen, LauncherSettings, VolumeDialog, DeviceSettings, AppDrawer, SearchBar, MobileNetworkSettings, ShowNotifications, TurnOffScreen,Camera,FOODIE
+
     }
 
     public static ActionDisplayItem[] actionDisplayItems = new ActionDisplayItem[]{
@@ -41,8 +42,10 @@ public class LauncherAction {
             new ActionDisplayItem(Action.SearchBar, HomeActivity._launcher.getResources().getString(R.string.minibar_title__search_bar), HomeActivity._launcher.getResources().getString(R.string.minibar_summary__search_bar), R.drawable.ic_search, 89),
             new ActionDisplayItem(Action.MobileNetworkSettings, HomeActivity._launcher.getResources().getString(R.string.minibar_title__mobile_network), HomeActivity._launcher.getResources().getString(R.string.minibar_summary__mobile_network), R.drawable.ic_network, 46),
             new ActionDisplayItem(Action.ShowNotifications, HomeActivity._launcher.getResources().getString(R.string.minibar_title__notification_bar), HomeActivity._launcher.getResources().getString(R.string.minibar_summary__notification_bar), R.drawable.ic_notifications, 46),
+
             new ActionDisplayItem(Action.Camera, HomeActivity._launcher.getResources().getString(R.string.minibar_title__camera), HomeActivity._launcher.getResources().getString(R.string.minibar_summary__camera), R.drawable.ic_camera, 13),
             new ActionDisplayItem(Action.FOODIE, HomeActivity._launcher.getResources().getString(R.string.minibar_title__camera), HomeActivity._launcher.getResources().getString(R.string.minibar_summary__camera), R.drawable.ic_aspect_ratio_black_24dp, 13),
+
     };
 
     public static List<Action> defaultArrangement = Arrays.asList(
@@ -50,6 +53,8 @@ public class LauncherAction {
             Action.LockScreen, Action.LauncherSettings,
             Action.VolumeDialog, Action.DeviceSettings,
             Action.Camera,Action.FOODIE
+            Action.Camera
+
     );
 
     public static void RunAction(Action action, final Context context) {
@@ -140,6 +145,7 @@ public class LauncherAction {
             case FOODIE:
                 context.startActivity(new Intent(context,CameraActivity.class));
                 break;
+
 
         }
     }
